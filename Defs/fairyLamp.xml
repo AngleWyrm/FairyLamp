@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Buildings>
+
+    <!-- Abstract building base -->
+    <ThingDef Name="BuildingBase" Abstract="True">
+        <category>Building</category>
+        <thingClass>Building</thingClass>
+        <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+        <selectable>true</selectable>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <repairEffect>Repair</repairEffect>
+        <filthLeaving>BuildingRubble</filthLeaving>
+        <designationCategory>Furniture</designationCategory>
+        <minifiedDef>MinifiedFurniture</minifiedDef>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <fillPercent>0.20</fillPercent>
+        <pathCost>4</pathCost>
+        <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+        <rotatable>false</rotatable>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <uiIconPath>lamp</uiIconPath>
+        <graphicData>
+            <texPath>lamp</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shadowData>
+                <volume>(0.3, 0.6, 0.3)</volume>
+                <offset>(0,0,-0.1)</offset>
+            </shadowData>
+            <damageData>
+                <rect>(0.2,0.2,0.6,0.6)</rect>
+            </damageData>
+        </graphicData>
+        <costList>
+            <FairyDust>2</FairyDust>
+        </costList>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+        <costStuffCount>5</costStuffCount>
+        <statBases>
+            <MaxHitPoints>20</MaxHitPoints>    <!--  20 hitPoints, easy to destroy -->
+            <WorkToBuild>1200</WorkToBuild>    <!--  20 seconds of labor at 60 ticks/second -->
+            <Flammability>0.25</Flammability>  <!-- 1/4 wood flammability -->
+            <Mass>0.5</Mass>                   <!-- 1/2 kg -->
+            <Beauty>5</Beauty>                 <!--   5 environmental beauty points -->
+        </statBases>
+   </ThingDef>
+    
+    <!-- Fairy Lamp -->
+    <ThingDef ParentName="BuildingBase">
+        <defName>FairyLamp</defName>
+        <label>fairy lamp</label>
+        <description>Lamp made from and fuelled by fairy dust. One forest fairy can produce enough fairy dust to keep up to five fairy lamps lit.</description>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>8</glowRadius>             <!-- 8 tiles glow radius -->
+                <glowColor>(129,247,218,0)</glowColor> <!-- R,G,B and icon transparency -->
+            </li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.2</fuelConsumptionRate> <!-- 1/5 FairyDust/day, 5 days/FairyDust -->
+				<fuelCapacity>3.0</fuelCapacity>               <!--   3 FairyDust tank capacity -->   
+				<fuelFilter>
+					<thingDefs>
+						<li>FairyDust</li>
+					</thingDefs>
+				</fuelFilter>
+				<destroyOnNoFuel>false</destroyOnNoFuel>
+			</li>
+		</comps>
+    </ThingDef>
+    
+</Buildings>
