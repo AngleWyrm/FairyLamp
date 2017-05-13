@@ -3,9 +3,14 @@
   <name>Fairy Lamp</name>
   <author>AngleWyrm</author>
   <targetVersion>0.16.1393</targetVersion>
-  <url>www.not_yet.com</url>
+  <url>https://ludeon.com/forums/index.php?topic=32389.0</url>
   <description>Add-on for More Monsters mod
 
-A magical lantern made from and powered by forest fairy dust.
+Adds a lantern to the game that is powered by fairy dust
+
+    It's built using 5 metal + 2 fairy dust
+    Forest fairies produce enough dust to support up to five lanterns each
+    Has a tank that can hold fuel enough for a whole season -- 3 fairy dust
+    Costs about 50 silver and 20 seconds in labor
   </description>
 </ModMetaData>
