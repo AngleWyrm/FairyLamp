@@ -19,7 +19,7 @@
         <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
         <rotatable>false</rotatable>
         <drawerType>MapMeshAndRealTime</drawerType>
-        <uiIconPath>lamp</uiIconPath>
+        <uiIconPath>lampIcon</uiIconPath>
         <graphicData>
             <texPath>lamp</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -55,7 +55,7 @@
         <comps>
             <li Class="CompProperties_Glower">
                 <glowRadius>8</glowRadius>             <!-- 8 tiles glow radius -->
-                <glowColor>(129,247,218,0)</glowColor> <!-- R,G,B and icon transparency -->
+                <glowColor>(191,251,240,200)</glowColor> <!-- R,G,B and glow transparency -->
             </li>
 			<li Class="CompProperties_Refuelable">
 				<fuelConsumptionRate>0.2</fuelConsumptionRate> <!-- 1/5 FairyDust/day, 5 days/FairyDust -->
